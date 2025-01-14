@@ -25,10 +25,12 @@ function buySlave() {
     if (totalBiscuits >= 100) {
         totalBiscuits -= 100;
         slaveAmount += 1;
+        bps+=1;
     }
     //displays the new slaves and total biscuit amounts
     updateSlaveOwnership();
     updateTotalBiscuits();
+    updateBps();
 }
 
 //update biscuits
@@ -48,6 +50,14 @@ function updateSlaveOwnership() {
     //sets the total slaves in html to the slaveAmount variable using the element id
     document.getElementById("slaves").innerHTML = slaveAmount;
 }
+
+//gives user their bps & updates display
+function giveBps() {
+    totalBiscuits += bps;
+    updateTotalBiscuits();
+}
+//run the giveBps function once per second
+setInterval(giveBps, 1000);
 
 //display on page load
 updateTotalBiscuits();
