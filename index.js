@@ -21,12 +21,14 @@ function clickHandler() {
 
 //allows the user to buy slaves
 function buySlave() {
-    //currently doesn't work for some reason. kai pls fix.
+    //if user has 100 or more biscuits, adds one slave, removes 100 biscuits.
     if (totalBiscuits >= 100) {
         totalBiscuits -= 100;
         slaveAmount += 1;
     }
+    //displays the new slaves and total biscuit amounts
     updateSlaveOwnership();
+    updateTotalBiscuits();
 }
 
 //update biscuits
