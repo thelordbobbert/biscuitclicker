@@ -29,7 +29,7 @@ h6 {
 }
 
 button {
-    background: linear-gradient(to bottom, #ff9800, #e68900);
+    background:#ff9800;
     color: white;
     border: none;
     padding: 15px 35px;
@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(to bottom, #e68900, #ff9800);
+    background:#e68900;
     transform: scale(1.05);
 }
 
