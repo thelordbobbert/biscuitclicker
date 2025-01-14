@@ -21,6 +21,7 @@ function clickHandler() {
 
 //allows the user to buy slaves
 function buySlave() {
+    //currently doesn't work for some reason. kai pls fix.
     if (totalBiscuits >= 100) {
         totalBiscuits -= 100;
         slaveAmount += 1;
@@ -36,7 +37,7 @@ function updateTotalBiscuits() {
 
 //update bps
 function updateBps() {
-    //sets the total cps in html to the bps variable using the element id
+    //sets the total bps in html to the bps variable using the element id
     document.getElementById("bps").innerHTML = bps;
 }
 
