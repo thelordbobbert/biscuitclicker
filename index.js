@@ -25,7 +25,7 @@ function buySlave() {
     if (totalBiscuits >= 100) {
         totalBiscuits -= 100;
         slaveAmount += 1;
-        bps+=1;
+        bps += 1;
     }
     //displays the new slaves and total biscuit amounts
     updateSlaveOwnership();
