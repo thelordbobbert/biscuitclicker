@@ -11,12 +11,37 @@ let totalBiscuits = 0;
 //current total amount of slaves
 let slaveAmount = 0;
 
+//load data from local storage
+function loadGame() {
+    const savedGame = JSON.parse(localStorage.getItem("biscuitClickerGame"));
+    if (savedGame) {
+        totalBiscuits = savedGame.totalBiscuits || 0;
+        bps = savedGame.bps || 0;
+        slaveAmount = savedGame.slaveAmount || 0;
+        updateTotalBiscuits();
+        updateBps();
+        updateSlaveOwnership();
+    }
+}
+
+//save game to local storage
+function saveGame() {
+    const gameData = {
+        totalBiscuits: totalBiscuits,
+        bps: bps,
+        slaveAmount: slaveAmount
+    };
+    localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
+}
+
+
 //click handler for the biscuit clicker button
 function clickHandler() {
     //updates their total biscuits variable
     totalBiscuits +=  bclick * clickMultiplier;
-    //displays this variable by updating display
+    //displays this variable by updating display & saves
     updateTotalBiscuits();
+    saveGame();
 }
 
 //allows the user to buy slaves
@@ -27,10 +52,11 @@ function buySlave() {
         slaveAmount += 1;
         bps += 1;
     }
-    //displays the new slaves and total biscuit amounts
+    //displays the new slaves and total biscuit amounts & saves game
     updateSlaveOwnership();
     updateTotalBiscuits();
     updateBps();
+    saveGame();
 }
 
 //update biscuits
@@ -51,15 +77,17 @@ function updateSlaveOwnership() {
     document.getElementById("slaves").innerHTML = slaveAmount;
 }
 
-//gives user their bps & updates display
+//gives user their bps & updates display & saves games
 function giveBps() {
     totalBiscuits += bps;
     updateTotalBiscuits();
+    saveGame();
 }
 //run the giveBps function once per second
 setInterval(giveBps, 1000);
 
 //display on page load
+loadGame();
 updateTotalBiscuits();
 updateBps();
 updateSlaveOwnership();
