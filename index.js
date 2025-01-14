@@ -6,7 +6,7 @@ let totalCookies = 0;
 
 function clickHandler() {
     totalCookies +=  bclick * clickMultiplier;
-    
+    updateTotalCookies();
 }
 
 function updateTotalCookies() {
