@@ -1,6 +1,6 @@
 let multiplier = 1;
 let bpm = 0;
-let bclick = 0;
+let bclick = 1;
 let clickMultiplier = 1;
 let totalCookies = 0;
 
