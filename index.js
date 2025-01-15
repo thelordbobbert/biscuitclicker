@@ -105,8 +105,8 @@ function updateSlaveOwnership() {
 }
 //update plantations
 function updatePlantationOwnership() {
-    //sets the total slaves in html to the slaveAmount variable using the element id
-    document.getElementById("plantations").innerHTML = slaveAmount;
+    //sets the total plantations in html to the plantationAmount variable using the element id
+    document.getElementById("plantations").innerHTML = plantationAmount;
 }
 
 //gives user their bps & updates display & saves games
