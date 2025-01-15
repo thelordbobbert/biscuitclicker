@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+    background: linear-gradient(to bottom, #29282f, #010102);
     color: #333;
     text-align: center;
     margin: 0;
@@ -14,7 +14,7 @@ body {
 
 h1 {
     font-size: 50px;
-    color: #ff9800;
+    color: #111f65;
     margin-bottom: 5px;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     font-weight: bold;
@@ -29,8 +29,8 @@ h6 {
 }
 
 button {
-    background:#ff9800;
-    color: white;
+    background:#111f65;
+    color: black;
     border: none;
     padding: 15px 35px;
     font-size: 18px;
@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-    background:#e68900;
+    background:#061146;
     transform: scale(1.05);
 }
 
@@ -53,15 +53,15 @@ p {
 
 #totalBiscuits {
     font-weight: bold;
-    color: #ff9800;
+    color: #111f65;
 }
 
 #bps {
     font-weight: bold;
-    color: #ff9800;
+    color: #111f65;
 }
 
 #slaves {
     font-weight: bold;
-    color: #ff9800;
+    color: #111f65;
 }
