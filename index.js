@@ -31,6 +31,21 @@ function loadGame() {
     }
 }
 
+function resetGame() {
+    const gameData = {
+        totalBiscuits: 0,
+        bps: 0,
+        slaveAmount: 0,
+        plantationAmount: 0,
+        bpsMultiplier: 1,
+        clickMultiplier: 1,
+        bclick: 1
+    };
+    localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
+    loadGame();
+}
+
+
 //save game to local storage
 function saveGame() {
     const gameData = {
