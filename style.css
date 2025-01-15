@@ -72,9 +72,7 @@ p {
 }
 
 #reset {
-    font-weight: bold;
-    color: #293c9e;
     position: absolute;
-    left: 60%;
-    top:60%;
+    left: 90%;
+    top: 90%;
 }
