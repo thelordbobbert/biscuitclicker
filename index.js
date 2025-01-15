@@ -27,6 +27,7 @@ function loadGame() {
         updateTotalBiscuits();
         updateBps();
         updateSlaveOwnership();
+        updatePlantationOwnership();
     }
 }
 
