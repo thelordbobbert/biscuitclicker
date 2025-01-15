@@ -79,6 +79,6 @@ p {
 
 #testing {
     position: absolute;
-    left: 85%;
-    bottom: 85%;
+    right: 85%;
+    bottom: 75%;
 }
