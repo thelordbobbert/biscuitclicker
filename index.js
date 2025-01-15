@@ -88,6 +88,3 @@ setInterval(giveBps, 1000);
 
 //display on page load
 loadGame();
-updateTotalBiscuits();
-updateBps();
-updateSlaveOwnership();
