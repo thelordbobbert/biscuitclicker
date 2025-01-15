@@ -18,6 +18,9 @@ function loadGame() {
         totalBiscuits = savedGame.totalBiscuits || 0;
         bps = savedGame.bps || 0;
         slaveAmount = savedGame.slaveAmount || 0;
+        bpsMultiplier = savedGame.bpsMultiplier || 1;
+        clickMultiplier = savedGame.clickMultiplier || 1;
+        bclick = savedGame.bclick || 1;
         updateTotalBiscuits();
         updateBps();
         updateSlaveOwnership();
@@ -29,7 +32,10 @@ function saveGame() {
     const gameData = {
         totalBiscuits: totalBiscuits,
         bps: bps,
-        slaveAmount: slaveAmount
+        slaveAmount: slaveAmount,
+        bpsMultiplier: bpsMultiplier,
+        clickMultiplier: clickMultiplier,
+        bclick: bclick
     };
     localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
 }
