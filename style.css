@@ -73,6 +73,6 @@ p {
 
 #reset {
     position: absolute;
-    left: 90%;
-    top: 90%;
+    right: 85%;
+    bottom: 85%;
 }
