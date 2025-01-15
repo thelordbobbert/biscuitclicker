@@ -45,6 +45,13 @@ function resetGame() {
     loadGame();
 }
 
+//used for testing, gives 1mil biscuits
+function testing() {
+    totalBiscuits += 1000000;
+    updateTotalBiscuits();
+    saveGame();
+}
+
 
 //save game to local storage
 function saveGame() {
