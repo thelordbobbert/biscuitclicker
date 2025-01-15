@@ -10,6 +10,8 @@ let clickMultiplier = 1;
 let totalBiscuits = 0;
 //current total amount of slaves
 let slaveAmount = 0;
+//current total amount of plantations
+let plantationAmount = 0;
 
 //load data from local storage
 function loadGame() {
@@ -18,6 +20,7 @@ function loadGame() {
         totalBiscuits = savedGame.totalBiscuits || 0;
         bps = savedGame.bps || 0;
         slaveAmount = savedGame.slaveAmount || 0;
+        plantationAmount = savedGame.plantationAmount || 0;
         bpsMultiplier = savedGame.bpsMultiplier || 1;
         clickMultiplier = savedGame.clickMultiplier || 1;
         bclick = savedGame.bclick || 1;
@@ -33,6 +36,7 @@ function saveGame() {
         totalBiscuits: totalBiscuits,
         bps: bps,
         slaveAmount: slaveAmount,
+        plantationAmount: plantationAmount,
         bpsMultiplier: bpsMultiplier,
         clickMultiplier: clickMultiplier,
         bclick: bclick
@@ -64,6 +68,22 @@ function buySlave() {
     updateBps();
     saveGame();
 }
+// function to buy plantations
+// ! plantation bps to be optimized !
+function buyPlantation(){
+    //if the user has 1000 biscuits they can buy 1 plantation
+    if(totalBiscuits >= 1000){
+        totalBiscuits -= 100;
+        plantationAmount += 1;
+        bps += 29;
+    }
+
+    //display the new plantations and update+save game
+    updatePlantationOwnership();
+    updateTotalBiscuits();
+    updateBps();
+    saveGame();
+}
 
 //update biscuits
 function updateTotalBiscuits() {
@@ -81,6 +101,11 @@ function updateBps() {
 function updateSlaveOwnership() {
     //sets the total slaves in html to the slaveAmount variable using the element id
     document.getElementById("slaves").innerHTML = slaveAmount;
+}
+//update plantations
+function updatePlantationOwnership() {
+    //sets the total slaves in html to the slaveAmount variable using the element id
+    document.getElementById("plantations").innerHTML = slaveAmount;
 }
 
 //gives user their bps & updates display & saves games
