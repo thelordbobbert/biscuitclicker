@@ -127,6 +127,7 @@ function buyPlantation(){
 //update biscuits
 function updateTotalBiscuits() {
     //sets the total biscuits in html to the totalBiscuits variable using the element id
+    totalBiscuits = Math.ceil(totalBiscuits*100)/100;
     document.getElementById("totalBiscuits").innerHTML = totalBiscuits;
 }
 
