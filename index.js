@@ -90,7 +90,7 @@ function clickHandler() {
 //allows the user to buy slaves
 function buySlave() {
     //if user has slaveCost or more biscuits, adds one slave, removes slaveCost biscuits.
-    slaveCost = baseSlaveCost * (1.1 ^ slaveAmount);
+    slaveCost = baseSlaveCost * Math.ceil((1.1 ^ slaveAmount)* 100)/100;
     if (totalBiscuits >= slaveCost) {
         totalBiscuits -= slaveCost;
         slaveAmount += 1;
