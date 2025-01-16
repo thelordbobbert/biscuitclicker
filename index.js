@@ -92,7 +92,7 @@ function clickHandler() {
 //allows the user to buy slaves
 function buySlave() {
     //if user has slaveCost or more biscuits, adds one slave, removes slaveCost biscuits.
-    slaveCost *= 1.1;
+    slaveCost = baseSlaveCost * 1.1 ^ slaveAmount;
     if (totalBiscuits >= slaveCost) {
         totalBiscuits -= slaveCost;
         slaveAmount += 1;
@@ -107,7 +107,7 @@ function buySlave() {
 // function to buy plantations
 function buyPlantation(){
     //if the user has plantationCost biscuits they can buy 1 plantation
-    plantationCost = basePlantationCost * (1.1 ^ plantationAmount);
+    plantationCost = basePlantationCost * 1.1 ^ plantationAmount;
     if(totalBiscuits >= plantationCost){
         totalBiscuits -= plantationCost;
         plantationAmount += 1;
