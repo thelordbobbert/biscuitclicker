@@ -96,7 +96,7 @@ function buySlave() {
 function buyPlantation(){
     //if the user has 1000 biscuits they can buy 1 plantation
     if(totalBiscuits >= 1000){
-        totalBiscuits -= 100;
+        totalBiscuits -= 1000;
         plantationAmount += 1;
         bps += 29;
     }
