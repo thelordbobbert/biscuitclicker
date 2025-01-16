@@ -134,14 +134,14 @@ function updateSlaveOwnership() {
     //sets the total slaves in html to the slaveAmount variable using the element id
     document.getElementById("slaves").innerHTML = slaveAmount;
     //updates slave purchase price display
-    document.getElementById("slave-upgrade").innerHTML = "buy slave: " + slaveCost + "biscuits " + "(0.1 bps)";
+    document.getElementById("slave-upgrade").innerHTML = "buy slave: " + slaveCost + " biscuits " + "(0.1 bps)";
 }
 //update plantations
 function updatePlantationOwnership() {
     //sets the total plantations in html to the plantationAmount variable using the element id
     document.getElementById("plantations").innerHTML = plantationAmount;
     //upgrades plantation purchase price display
-    document.getElementById("plantation-upgrade").innerHTML = "buy plantation: " + plantationCost + "biscuits " + "(1 bps)";
+    document.getElementById("plantation-upgrade").innerHTML = "buy plantation: " + plantationCost + " biscuits " + "(1 bps)";
 }
 
 //gives user their bps & updates display & saves games
