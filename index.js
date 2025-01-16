@@ -110,11 +110,11 @@ function buySlave() {
 // function to buy plantations
 function buyPlantation(){
     //if the user has plantationCost biscuits they can buy 1 plantation
-    plantationCost = basePlantationCost * 1.1 ^ plantationAmount;
     if(totalBiscuits >= plantationCost){
         totalBiscuits -= plantationCost;
         plantationAmount += 1;
         bps += 1;
+        plantationCost = Math.ceil(basePlantationCost * Math.pow(1.1,plantationAmount) * 100)/100;    
     }
 
     //display the new plantations and update+save game
@@ -133,6 +133,7 @@ function updateTotalBiscuits() {
 //update bps
 function updateBps() {
     //sets the total bps in html to the bps variable using the element id
+    bps = Math.ceil(bps * 100)/100;
     document.getElementById("bps").innerHTML = bps;
 }
 
