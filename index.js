@@ -16,6 +16,10 @@ let plantationAmount = 0;
 let baseSlaveCost = 15;
 //base cost of plantation
 let basePlantationCost = 100;
+//current cost of slave
+let slaveCost = 15;
+//current cost of plantation
+let plantationCost = 100;
 
 //load data from local storage
 function loadGame() {
@@ -84,7 +88,7 @@ function clickHandler() {
 //allows the user to buy slaves
 function buySlave() {
     //if user has slaveCost or more biscuits, adds one slave, removes slaveCost biscuits.
-    let slaveCost = baseSlaveCost * (1.1 ^ slaveAmount);
+    slaveCost = baseSlaveCost * (1.1 ^ slaveAmount);
     if (totalBiscuits >= slaveCost) {
         totalBiscuits -= slaveCost;
         slaveAmount += 1;
@@ -99,7 +103,7 @@ function buySlave() {
 // function to buy plantations
 function buyPlantation(){
     //if the user has plantationCost biscuits they can buy 1 plantation
-    let plantationCost = basePlantationCost * (1.1 ^ plantationAmount);
+    plantationCost = basePlantationCost * (1.1 ^ plantationAmount);
     if(totalBiscuits >= plantationCost){
         totalBiscuits -= plantationCost;
         plantationAmount += 1;
@@ -129,11 +133,15 @@ function updateBps() {
 function updateSlaveOwnership() {
     //sets the total slaves in html to the slaveAmount variable using the element id
     document.getElementById("slaves").innerHTML = slaveAmount;
+    //updates slave purchase price display
+    document.getElementById("slave-upgrade").innerHTML = "buy slave: " + slaveCost + "biscuits " + "(0.1 bps)";
 }
 //update plantations
 function updatePlantationOwnership() {
     //sets the total plantations in html to the plantationAmount variable using the element id
     document.getElementById("plantations").innerHTML = plantationAmount;
+    //upgrades plantation purchase price display
+    document.getElementById("plantation-upgrade").innerHTML = "buy plantation: " + plantationCost + "biscuits " + "(1 bps)";
 }
 
 //gives user their bps & updates display & saves games
