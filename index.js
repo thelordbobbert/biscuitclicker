@@ -133,7 +133,7 @@ function updateTotalBiscuits() {
 //update bps
 function updateBps() {
     //sets the total bps in html to the bps variable using the element id
-    bps = Math.ceil(bps * 100)/100;
+    bps = Math.round(bps * 100)/100;
     document.getElementById("bps").innerHTML = bps;
 }
 
