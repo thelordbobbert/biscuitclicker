@@ -196,7 +196,7 @@ function updateFactoryOwnership() {
 
 //gives user their bps & updates display & saves games
 function giveBps() {
-    totalBiscuits += bps;
+    totalBiscuits += bps * bpsMultiplier;
     updateTotalBiscuits();
     saveGame();
 }
