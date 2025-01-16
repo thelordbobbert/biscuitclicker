@@ -12,14 +12,20 @@ let totalBiscuits = 0;
 let slaveAmount = 0;
 //current total amount of plantations
 let plantationAmount = 0;
+//current total amount of factories
+let factoryAmount = 0;
 //cost of slave
 let baseSlaveCost = 15;
 //base cost of plantation
 let basePlantationCost = 100;
+//base cost of factories
+let baseFactoryCost = 1100;
 //current cost of slave
 let slaveCost = 15;
 //current cost of plantation
 let plantationCost = 100;
+// current cost of factories
+let factoryCost = 1100;
 
 //load data from local storage
 function loadGame() {
@@ -27,13 +33,20 @@ function loadGame() {
     if (savedGame) {
         totalBiscuits = savedGame.totalBiscuits || 0;
         bps = savedGame.bps || 0;
+
+        //Amounts
         slaveAmount = savedGame.slaveAmount || 0;
         plantationAmount = savedGame.plantationAmount || 0;
+        factoryAmount = savedGame.factoryAmount || 0;
+
         bpsMultiplier = savedGame.bpsMultiplier || 1;
         clickMultiplier = savedGame.clickMultiplier || 1;
         bclick = savedGame.bclick || 1;
+
+        //Costs
         slaveCost = savedGame.slaveCost || 15;
         plantationCost = savedGame.plantationCost || 100;
+        factoryCost = savedGame.factoryCost || 1100;
         updateTotalBiscuits();
         updateBps();
         updateSlaveOwnership();
@@ -47,11 +60,13 @@ function resetGame() {
         bps: 0,
         slaveAmount: 0,
         plantationAmount: 0,
+        factoryAmount: 0,
         bpsMultiplier: 1,
         clickMultiplier: 1,
         bclick: 1,
         slaveCost: 15,
-        plantationCost: 100
+        plantationCost: 100,
+        factoryCost: baseFactoryCost
     };
     localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
     loadGame();
@@ -72,11 +87,13 @@ function saveGame() {
         bps: bps,
         slaveAmount: slaveAmount,
         plantationAmount: plantationAmount,
+        factoryAmount: factoryAmount,
         bpsMultiplier: bpsMultiplier,
         clickMultiplier: clickMultiplier,
         bclick: bclick,
         slaveCost: slaveCost,
-        plantationCost: plantationCost
+        plantationCost: plantationCost,
+        factoryCost: factoryCost
     };
     localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
 }
@@ -124,6 +141,23 @@ function buyPlantation(){
     saveGame();
 }
 
+// function to buy factories
+function buyFactory(){
+    //if the user has plantationCost biscuits they can buy 1 plantation
+    if(totalBiscuits >= factoryCost){
+        totalBiscuits -= factoryCost;
+        factoryAmount += 1;
+        bps += 1;
+        factoryCost = Math.ceil(baseFactoryCost * Math.pow(1.1,factoryAmount) * 100)/100;    
+    }
+
+    //display the new plantations and update+save game
+    updateFactoryOwnership();
+    updateTotalBiscuits();
+    updateBps();
+    saveGame();
+}
+
 //update biscuits
 function updateTotalBiscuits() {
     //sets the total biscuits in html to the totalBiscuits variable using the element id
@@ -151,6 +185,13 @@ function updatePlantationOwnership() {
     document.getElementById("plantations").innerHTML = plantationAmount;
     //upgrades plantation purchase price display
     document.getElementById("plantation-upgrade").innerHTML = "buy plantation: " + plantationCost + " biscuits " + "(1 bps)";
+}
+//update plantations
+function updateFactoryOwnership() {
+    //sets the total plantations in html to the plantationAmount variable using the element id
+    document.getElementById("factories").innerHTML = factoryAmount;
+    //upgrades plantation purchase price display
+    document.getElementById("factory-upgrade").innerHTML = "buy factory: " + factoryCost + " biscuits " + "(8 bps)";
 }
 
 //gives user their bps & updates display & saves games

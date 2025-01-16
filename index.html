@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- the title in page -->
-    <h1>Biscuit Clicker - Beta 0.0.9</h1>
+    <h1>Biscuit Clicker - Beta 0.1.0</h1>
     <!-- the subtitle in the page for credits -->
     <h6>Developed by Bobbert and Nilla</h6>
     
@@ -22,6 +22,8 @@
     <p>your slaves: <span id="slaves">0</span></p>
     <!-- total display of plantations -->
     <p>your plantations: <span id="plantations">0</span></p>
+    <!-- total display of factories -->
+    <p>your factories: <span id="factories">0</span></p>
 
     <!-- container for right-side upgrades -->
     <div id="upgrade-container">
@@ -31,6 +33,9 @@
       <!-- tab to buy plantations -->
       <div class="upgrade-tab" id="plantation-upgrade" onclick="buyPlantation()">buy plantation: 100 biscuits (1 bps)</div>
       <!-- additional tabs can be added here -->
+      <!-- tab to buy factories -->
+      <div class="upgrade-tab" id="factory-upgrade" onclick="buyFactory()">buy factory: 1100 biscuits (8 bps)</div>
+      
     </div>
 
     <!-- button to reset game save -->
