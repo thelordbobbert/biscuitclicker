@@ -72,7 +72,9 @@ function saveGame() {
         plantationAmount: plantationAmount,
         bpsMultiplier: bpsMultiplier,
         clickMultiplier: clickMultiplier,
-        bclick: bclick
+        bclick: bclick,
+        slaveCost: slaveCost,
+        plantationCost: plantationCost
     };
     localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
 }
