@@ -32,6 +32,8 @@ function loadGame() {
         bpsMultiplier = savedGame.bpsMultiplier || 1;
         clickMultiplier = savedGame.clickMultiplier || 1;
         bclick = savedGame.bclick || 1;
+        slaveCost = savedGame.slaveCost || 15;
+        plantationCost = savedGame.plantationCost || 100;
         updateTotalBiscuits();
         updateBps();
         updateSlaveOwnership();
