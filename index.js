@@ -12,6 +12,10 @@ let totalBiscuits = 0;
 let slaveAmount = 0;
 //current total amount of plantations
 let plantationAmount = 0;
+//cost of slave
+let slaveCost = 100;
+//cost of plantation
+let plantationCost = 250;
 
 //load data from local storage
 function loadGame() {
@@ -79,11 +83,12 @@ function clickHandler() {
 
 //allows the user to buy slaves
 function buySlave() {
-    //if user has 100 or more biscuits, adds one slave, removes 100 biscuits.
-    if (totalBiscuits >= 100) {
-        totalBiscuits -= 100;
+    //if user has slaveCost or more biscuits, adds one slave, removes slaveCost biscuits.
+    if (totalBiscuits >= slaveCost) {
+        totalBiscuits -= slaveCost;
         slaveAmount += 1;
         bps += 1;
+        slaveCost = slaveCost * 1.2;
     }
     //displays the new slaves and total biscuit amounts & saves game
     updateSlaveOwnership();
@@ -92,13 +97,13 @@ function buySlave() {
     saveGame();
 }
 // function to buy plantations
-// ! plantation bps to be optimized !
 function buyPlantation(){
-    //if the user has 1000 biscuits they can buy 1 plantation
-    if(totalBiscuits >= 1000){
-        totalBiscuits -= 1000;
+    //if the user has plantationCost biscuits they can buy 1 plantation
+    if(totalBiscuits >= plantationCost){
+        totalBiscuits -= plantationCost;
         plantationAmount += 1;
-        bps += 29;
+        bps += 3;
+        plantationCost = plantationCost * 1.2;
     }
 
     //display the new plantations and update+save game
