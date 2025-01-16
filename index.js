@@ -155,6 +155,7 @@ function updatePlantationOwnership() {
 //gives user their bps & updates display & saves games
 function giveBps() {
     totalBiscuits += bps;
+    totalBiscuits = Math.ceil(totalBiscuits*100)/100;
     updateTotalBiscuits();
     saveGame();
 }
