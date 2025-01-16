@@ -47,7 +47,9 @@ function resetGame() {
         plantationAmount: 0,
         bpsMultiplier: 1,
         clickMultiplier: 1,
-        bclick: 1
+        bclick: 1,
+        slaveCost: 15,
+        plantationCost: 100
     };
     localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
     loadGame();
