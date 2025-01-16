@@ -59,6 +59,10 @@ p {
     color: #293c9e;
 }
 
+#bps-title {
+    color: white;
+}
+
 #upgrade-container {
     position: absolute;
     right: 10px;
