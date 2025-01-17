@@ -51,6 +51,7 @@ function loadGame() {
         updateBps();
         updateSlaveOwnership();
         updatePlantationOwnership();
+        updateFactoryOwnership();
     }
 }
 
@@ -66,7 +67,7 @@ function resetGame() {
         bclick: 1,
         slaveCost: 15,
         plantationCost: 100,
-        factoryCost: baseFactoryCost
+        factoryCost: 1100
     };
     localStorage.setItem("biscuitClickerGame", JSON.stringify(gameData));
     loadGame();
@@ -188,7 +189,7 @@ function updatePlantationOwnership() {
 }
 //update factories
 function updateFactoryOwnership() {
-    //sets the total plantations in html to the factoryAmount variable using the element id
+    //sets the total factory in html to the factoryAmount variable using the element id
     document.getElementById("factories").innerHTML = factoryAmount;
     //upgrades factory purchase price display
     document.getElementById("factory-upgrade").innerHTML = "buy factory: " + factoryCost + " biscuits " + "(8 bps)";
