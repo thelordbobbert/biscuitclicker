@@ -186,11 +186,11 @@ function updatePlantationOwnership() {
     //upgrades plantation purchase price display
     document.getElementById("plantation-upgrade").innerHTML = "buy plantation: " + plantationCost + " biscuits " + "(1 bps)";
 }
-//update plantations
+//update factories
 function updateFactoryOwnership() {
-    //sets the total plantations in html to the plantationAmount variable using the element id
+    //sets the total plantations in html to the factoryAmount variable using the element id
     document.getElementById("factories").innerHTML = factoryAmount;
-    //upgrades plantation purchase price display
+    //upgrades factory purchase price display
     document.getElementById("factory-upgrade").innerHTML = "buy factory: " + factoryCost + " biscuits " + "(8 bps)";
 }
 

@@ -48,13 +48,14 @@ button:hover {
 
 p {
     font-size: 20px;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 #totalBiscuits,
 #bps,
 #slaves,
-#plantations {
+#plantations,
+#factories {
     font-weight: bold;
     color: #293c9e;
 }
